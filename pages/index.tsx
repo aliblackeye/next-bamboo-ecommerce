@@ -19,8 +19,8 @@ const Index: NextPage = () => {
       <header>
         <Header />
       </header>
-      
-      <main>
+
+      <main className="h-screen">
         <Home />
       </main>
 

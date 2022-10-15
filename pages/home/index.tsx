@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 const Home:NextPage = () => {
   return (
-    <div></div>
+    <div>Ana Sayfa</div>
   )
 }
 

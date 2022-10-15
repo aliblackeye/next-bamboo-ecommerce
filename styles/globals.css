@@ -11,3 +11,12 @@
 body {
     font-family: 'Inter', sans-serif;
 }
+
+.btn {
+    @apply py-[0.5rem] px-[1rem] inline-block bg-[#292929] rounded-[20px] text-white;
+    /* display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #292929;
+    border-radius: 24px; */
+}

@@ -22,7 +22,7 @@ const Logo = () => {
 
 const HeaderButtons = () => {
   return (
-    <div className="flex gap-5">
+    <div className="flex gap-5 flex-1 justify-end">
       <button className="hover:text-primary transition-all">
         <FiSearch size={32} />
       </button>
@@ -83,8 +83,10 @@ const MenuModal = ({
             <FiPhone size={24} /> Contact
           </a>
         </nav>
-        <button className="absolute top-2 right-2 hover:text-primary transition-all" onClick={() => setMenuModal(false)}>
-          <GiCancel size={24}/>
+        <button
+          className="absolute top-2 right-2 hover:text-primary transition-all"
+          onClick={() => setMenuModal(false)}>
+          <GiCancel size={24} />
         </button>
       </div>
     </OutsideClickHandler>
@@ -97,7 +99,9 @@ export default function Header() {
   return (
     <div className="flex items-center bg-secondary opacity-80 drop-shadow-lg h-[100px]">
       <div className="container p-5 mx-auto flex justify-between items-center text-white">
-        <button className="hover:text-primary transition-all" onClick={() => setMenuModal(true)}>
+        <button
+          className="flex-1 hover:text-primary transition-all"
+          onClick={() => setMenuModal(true)}>
           <GiHamburgerMenu size={32} />
         </button>
         <Logo />
