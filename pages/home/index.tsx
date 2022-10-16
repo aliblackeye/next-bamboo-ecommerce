@@ -20,6 +20,12 @@ const Home: NextPage = () => {
     { id: 9, name: "Product 9", price: 900, image: "/images/p9.png" },
   ]);
 
+  const [heroImages, setHeroImages] = useState([
+    { id: 1, image: "/images/hero.jpg" },
+    { id: 2, image: "/images/hero2.jpg" },
+    { id: 3, image: "/images/hero3.jpg" },
+  ]);
+
   return (
     <>
       <Head>
@@ -30,68 +36,66 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <Swiper
-        cssMode={true}
-        navigation={true}
-        pagination={{ clickable: true }}
-        mousewheel={true}
-        autoplay={{
-          delay: 3000,
-          pauseOnMouseEnter: true,
-          disableOnInteraction: false,
-        }}
-        keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper">
-        <SwiperSlide>
-          <div className="h-[728px] w-screen">
-            <img
-              src="/images/hero.png"
-              className="!w-full !h-full object-cover"
-              alt="hero"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-[728px] w-screen">
-            <img
-              src="/images/hero2.jpg"
-              className="!w-full !h-full object-cover"
-              alt="hero"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-[728px] w-screen">
-            <img
-              src="/images/hero3.jpg"
-              className="!w-full !h-full object-cover"
+      <div className="relative">
+        <Swiper
+          cssMode={true}
+          navigation={true}
+          pagination={{ clickable: true }}
+          mousewheel={true}
+          autoplay={{
+            delay: 3000,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+          }}
+          keyboard={true}
+          modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+          className="mySwiper">
+          {heroImages.map((heroImage) => (
+            <SwiperSlide key={heroImage.id}>
+              <div className="h-[728px] w-screen">
+                <img
+                  src={heroImage.image}
+                  className="!w-full !h-full object-cover"
+                  alt="hero"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="text-white flex flex-col items-center absolute top-1/4 left-1/2 -translate-x-1/2 z-40 text-center">
+          <span className="tracking-[3px] mb-[30px] font-bold text-[16px] md:text-[24px]">
+            INDOORS
+          </span>
+          <h1 className="font-header text-[30px] mb-1 md:text-[38px] leading-[63px] md:mb-2">
+            See Bamboo&#39;s New Range Of Indoor Furniture
+          </h1>
+          <p className="mt-4 hidden text-[18px] sm:inline-block md:text-[24px]">
+            Classic meet modern living, Bamboo has a fantastic range of indoor
+            furniture, perfect for any modern home.
+          </p>
+          <button className="btn btn-primary px-8 py-3 rounded-md mt-8 md:text-[18px] w-[188px]">
+            See More
+          </button>
+        </div>
+      </div>
 
-              alt="hero"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-[728px] w-screen">
-            <img
-              src="/images/hero4.jpg"
-              className="!w-full !h-full object-cover"
-
-              alt="hero"
-            />
-          </div>
-        </SwiperSlide>
-      </Swiper>
-      <h1 className="text-5xl text-center font-bold mt-5">Featured Products</h1>
+      <h1 className="text-xl sm:text-[34px] md:text-5xl text-center font-bold mt-5 font-header">
+        Featured Products
+      </h1>
       <div className="p-5 container mx-auto">
-        <div className="grid grid-cols-3 gap-3 justify-items-center ">
-          {products.map((product, i) => (
-            <div className="relative max-h-[510px] max-w-[396px]" key={i}>
+        <div className="grid grid-cols-3 gap-5 justify-items-center ">
+          {products.map((product) => (
+            <a
+              href="#"
+              className="featured-product relative max-h-[510px] max-w-[396px] transition ease-out hover:border-primary rounded-[10px] hover:border-4 hover:-translate-y-3 drop-shadow-xl duration-200"
+              key={product.id}>
               <img
                 src={product.image}
                 alt="product"
+                className="!w-full !h-full object-cover"
               />
-            </div>
+              <div className="featured-product-price absolute flex items-end justify-center py-4 opacity-0 transition-all bottom-0 left-0 font-display text-white text-2xl w-full h-1/4 bg-gradient-to-t from-black to-transparent"><span>$400.00</span></div>
+            </a>
           ))}
         </div>
       </div>

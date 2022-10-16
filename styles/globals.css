@@ -13,12 +13,16 @@ body {
 }
 
 .btn {
-    @apply py-[0.5rem] px-[1rem] inline-block bg-[#292929] rounded-[20px] text-white;
+    @apply py-[16px] px-[46px] inline-block bg-[#292929] rounded-[30px] font-bold uppercase text-white transition-all hover:opacity-90;
     /* display: inline-block;
     padding: 0.5rem 1rem;
     color: #fff;
     background-color: #292929;
     border-radius: 24px; */
+}
+
+.btn-primary {
+    @apply bg-primary text-secondary; 
 }
 
 .swiper-button-prev,.swiper-button-next {
@@ -37,4 +41,8 @@ body {
 
 .swiper-pagination-bullet-active {
     @apply bg-white;
+}
+
+.featured-product:hover .featured-product-price {
+    @apply opacity-100;
 }

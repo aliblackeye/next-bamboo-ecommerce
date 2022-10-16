@@ -114,7 +114,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 z-50 w-full flex items-center bg-secondary opacity-80 drop-shadow-lg h-[100px]">
+      <div className="fixed top-0 left-0 z-50 w-full flex items-center bg-secondary opacity-80 drop-shadow-2xl h-[100px]">
         <div className="container p-5 mx-auto flex justify-between items-center text-white">
           <MenuButton setMenuModal={setMenuModal} />
           <Logo />
