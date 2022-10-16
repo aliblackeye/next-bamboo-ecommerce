@@ -20,3 +20,21 @@ body {
     background-color: #292929;
     border-radius: 24px; */
 }
+
+.swiper-button-prev,.swiper-button-next {
+    @apply bg-transparent rounded-full border-2 border-secondary p-8 text-secondary;
+
+}
+
+.swiper-button-prev::after,.swiper-button-next::after {
+    @apply text-xl;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-transparent border-2 opacity-100 border-white w-6 h-6; 
+
+}
+
+.swiper-pagination-bullet-active {
+    @apply bg-white;
+}

@@ -43,7 +43,7 @@ const MenuModal = ({
       onOutsideClick={() => {
         setMenuModal(false);
       }}>
-      <div className="fixed top-0 left-0 h-screen bg-white rounded-tr-md rounded-br-md p-10 font-bold z-50 uppercase">
+      <div className="drop-shadow-lg fixed top-0 left-0 h-screen bg-white rounded-tr-md rounded-br-md p-10 font-bold z-50 uppercase">
         <div className="py-2 px-4 border-2 border-gray-500">
           <input
             className="border-0 outline-0"
@@ -93,21 +93,35 @@ const MenuModal = ({
   );
 };
 
+const MenuButton = ({
+  setMenuModal,
+}: {
+  setMenuModal: Dispatch<SetStateAction<boolean>>;
+}) => {
+  return (
+    <div className="flex-1 hamburger menu">
+      <button
+        className="hover:text-primary transition-all"
+        onClick={() => setMenuModal(true)}>
+        <GiHamburgerMenu size={32} />
+      </button>
+    </div>
+  );
+};
+
 export default function Header() {
   const [menuModal, setMenuModal] = useState(false);
 
   return (
-    <div className="flex items-center bg-secondary opacity-80 drop-shadow-lg h-[100px]">
-      <div className="container p-5 mx-auto flex justify-between items-center text-white">
-        <button
-          className="flex-1 hover:text-primary transition-all"
-          onClick={() => setMenuModal(true)}>
-          <GiHamburgerMenu size={32} />
-        </button>
-        <Logo />
-        <HeaderButtons />
+    <>
+      <div className="fixed top-0 left-0 z-50 w-full flex items-center bg-secondary opacity-80 drop-shadow-lg h-[100px]">
+        <div className="container p-5 mx-auto flex justify-between items-center text-white">
+          <MenuButton setMenuModal={setMenuModal} />
+          <Logo />
+          <HeaderButtons />
+        </div>
       </div>
       {menuModal && <MenuModal setMenuModal={setMenuModal} />}
-    </div>
+    </>
   );
 }
