@@ -46,3 +46,11 @@ body {
 .featured-product:hover .featured-product-price {
     @apply opacity-100;
 }
+
+.swiper-scrollbar {
+    @apply bg-[#C9C9C9] absolute !-bottom-0 z-30;
+}
+
+.swiper-scrollbar-drag {
+    @apply !bg-[#6E6E6E];
+}
