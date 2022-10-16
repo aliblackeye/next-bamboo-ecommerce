@@ -8,17 +8,7 @@ import Header from "../components/layout/Header";
 const Index: NextPage = () => {
   return (
     <>
-      <header>
-        <Header />
-      </header>
-
-      <main>
         <Home />
-      </main>
-
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 };
