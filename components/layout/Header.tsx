@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState, Dispatch, SetStateAction } from "react";
+import Link from "next/link";
 import {
   GiHamburgerMenu,
   GiWoodenChair,
@@ -12,11 +13,12 @@ import { BiCabinet, BiInfoCircle } from "react-icons/bi";
 import { HiShoppingCart } from "react-icons/hi";
 import OutsideClickHandler from "react-outside-click-handler";
 
+
 const Logo = () => {
   return (
-    <a href="#">
-      <Image src="/images/logo.png" alt="logo" width="169px" height="47px" />
-    </a>
+    <Link href="/home">
+      <Image src="/images/logo.png" className="cursor-pointer" alt="logo" width="169px" height="47px" />
+    </Link>
   );
 };
 
@@ -52,36 +54,48 @@ const MenuModal = ({
           />
         </div>
         <nav className="flex flex-col gap-2 mt-10">
-          <a
-            href="#"
+          <Link
+            href="/category/chair"
             className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+            <div className="flex ">
             <GiWoodenChair size={24} /> Chairs
-          </a>
-          <a
-            href="#"
+            </div>
+          </Link>
+          <Link
+            href="/category/chair"
             className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+            <div className="flex ">
             <BiCabinet size={24} /> Cabinets
-          </a>
-          <a
-            href="#"
+            </div>
+          </Link>
+          <Link
+            href="/category/chair"
             className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+            <div className="flex ">
             <GiSofa size={24} /> Sofas
-          </a>
-          <a
-            href="#"
+            </div>
+          </Link>
+          <Link
+            href="/category/chair"
             className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+            <div className="flex ">
             <GiParkBench size={24} /> Benchs
-          </a>
-          <a
-            href="#"
+            </div>
+          </Link>
+          <Link
+            href="/category/chair"
             className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+            <div className="flex ">
             <BiInfoCircle size={24} /> About Us
-          </a>
-          <a
-            href="#"
+            </div>
+          </Link>
+          <Link
+            href="/category/chair"
             className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+            <div className="flex ">
             <FiPhone size={24} /> Contact
-          </a>
+            </div>
+          </Link>
         </nav>
         <button
           className="absolute top-2 right-2 hover:text-primary transition-all"
