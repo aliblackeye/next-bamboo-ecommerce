@@ -13,11 +13,16 @@ import { BiCabinet, BiInfoCircle } from "react-icons/bi";
 import { HiShoppingCart } from "react-icons/hi";
 import OutsideClickHandler from "react-outside-click-handler";
 
-
 const Logo = () => {
   return (
     <Link href="/home">
-      <Image src="/images/logo.png" className="cursor-pointer" alt="logo" width="169px" height="47px" />
+      <Image
+        src="/images/logo.png"
+        className="cursor-pointer"
+        alt="logo"
+        width="169px"
+        height="47px"
+      />
     </Link>
   );
 };
@@ -54,47 +59,35 @@ const MenuModal = ({
           />
         </div>
         <nav className="flex flex-col gap-2 mt-10">
-          <Link
-            href="/category/chair"
-            className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
-            <div className="flex ">
-            <GiWoodenChair size={24} /> Chairs
-            </div>
+          <Link href="/category/chair">
+            <span className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+              <GiWoodenChair size={24} /> Chairs
+            </span>
           </Link>
-          <Link
-            href="/category/chair"
-            className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
-            <div className="flex ">
-            <BiCabinet size={24} /> Cabinets
-            </div>
+          <Link href="/category/chair">
+            <span className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+              <BiCabinet size={24} /> Cabinets
+            </span>
           </Link>
-          <Link
-            href="/category/chair"
-            className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
-            <div className="flex ">
-            <GiSofa size={24} /> Sofas
-            </div>
+          <Link href="/category/chair">
+            <span className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+              <GiSofa size={24} /> Sofas
+            </span>
           </Link>
-          <Link
-            href="/category/chair"
-            className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
-            <div className="flex ">
-            <GiParkBench size={24} /> Benchs
-            </div>
+          <Link href="/category/chair">
+            <span className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+              <GiParkBench size={24} /> Benchs
+            </span>
           </Link>
-          <Link
-            href="/category/chair"
-            className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
-            <div className="flex ">
-            <BiInfoCircle size={24} /> About Us
-            </div>
+          <Link href="/category/chair">
+            <span className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+              <BiInfoCircle size={24} /> About Us
+            </span>
           </Link>
-          <Link
-            href="/category/chair"
-            className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
-            <div className="flex ">
-            <FiPhone size={24} /> Contact
-            </div>
+          <Link href="/category/chair">
+            <span className="flex items-center gap-2 p-3 hover:bg-primary transition-all">
+              <FiPhone size={24} /> Contact
+            </span>
           </Link>
         </nav>
         <button
