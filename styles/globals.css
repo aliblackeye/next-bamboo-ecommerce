@@ -25,21 +25,21 @@ body {
     @apply bg-primary text-secondary; 
 }
 
-.swiper-button-prev,.swiper-button-next {
+.featured-products-swiper .swiper-button-prev,.swiper-button-next {
     @apply bg-transparent rounded-full border-2 border-secondary p-8 text-secondary;
 
 }
 
-.swiper-button-prev::after,.swiper-button-next::after {
+.featured-products-swiper .swiper-button-prev::after,.swiper-button-next::after {
     @apply text-xl;
 }
 
-.swiper-pagination-bullet {
+.bamboo-products-swiper .swiper-pagination-bullet {
     @apply bg-transparent border-2 opacity-100 border-white w-6 h-6; 
 
 }
 
-.swiper-pagination-bullet-active {
+.bamboo-products-swiper .swiper-pagination-bullet-active {
     @apply bg-white;
 }
 
