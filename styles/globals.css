@@ -25,12 +25,12 @@ body {
     @apply bg-primary text-secondary; 
 }
 
-.featured-products-swiper .swiper-button-prev,.swiper-button-next {
+.featured-products-swiper .swiper-button-prev, .featured-products-swiper .swiper-button-next {
     @apply bg-transparent rounded-full border-2 border-secondary p-8 text-secondary;
 
 }
 
-.featured-products-swiper .swiper-button-prev::after,.swiper-button-next::after {
+.featured-products-swiper .swiper-button-prev::after,.featured-products-swiper .swiper-button-next::after {
     @apply text-xl;
 }
 
