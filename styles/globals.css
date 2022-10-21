@@ -34,12 +34,12 @@ body {
     @apply text-xl;
 }
 
-.bamboo-products-swiper .swiper-pagination-bullet {
+.featured-products-swiper .swiper-pagination-bullet {
     @apply bg-transparent border-2 opacity-100 border-white w-6 h-6; 
 
 }
 
-.bamboo-products-swiper .swiper-pagination-bullet-active {
+.featured-products-swiper .swiper-pagination-bullet-active {
     @apply bg-white;
 }
 
@@ -53,4 +53,11 @@ body {
 
 .swiper-scrollbar-drag {
     @apply !bg-[#6E6E6E];
+}
+
+.product-swiper .swiper-button-prev, .product-swiper .swiper-button-next {
+    @apply bg-white drop-shadow-lg rounded-full p-8 text-secondary;
+}
+.product-swiper .swiper-button-prev::after, .product-swiper .swiper-button-next::after {
+    @apply text-2xl font-bold;
 }
