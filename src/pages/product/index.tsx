@@ -140,9 +140,9 @@ const Product: NextPage = () => {
             navigation={true}
             mousewheel={true}
             modules={[Navigation, Mousewheel]}
-            className="product-swiper w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]"> 
-            <SwiperSlide> 
-              <div className="w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]">   
+            className="product-swiper w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]">
+            <SwiperSlide>
+              <div className="w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]">
                 <img
                   src="/images/p1.png"
                   className="w-full h-full"
@@ -299,13 +299,11 @@ const Product: NextPage = () => {
                 .filter((product) => product.type === selectCategory)
                 .map((p) => (
                   <SwiperSlide key={p.id}>
-                    <div className="">
-                      <img
-                        src={p.image}
-                        alt="product"
-                        className="object-cover !w-full !h-full"
-                      />
-                    </div>
+                    <img
+                      src={p.image}
+                      alt="product"
+                      className="object-cover !w-full !h-full"
+                    />
                   </SwiperSlide>
                 ))}
             </Swiper>

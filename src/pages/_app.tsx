@@ -6,14 +6,19 @@ import "swiper/css/autoplay";
 import "swiper/css/scrollbar";
 
 import "../styles/globals.css";
+
 import type { AppProps } from "next/app";
+import { store } from "../features/store";
+import { Provider } from "react-redux";
 import Layout from "../layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
 
