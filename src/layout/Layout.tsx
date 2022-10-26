@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
+import Footer from "../common/components/Footer/Footer";
+import Header from "../common/components/Header/Header";
 const Layout = ({ children }: { children: ReactElement }) => {
   return (
     <>

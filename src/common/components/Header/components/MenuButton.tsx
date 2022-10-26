@@ -1,6 +1,6 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Dispatch, SetStateAction } from "react";
-import IconButton from "../../../common/components/FormElements/Buttons/IconButton";
+import IconButton from "../../FormElements/Buttons/IconButton";
 
 const MenuButton = ({
   setMenuModal,

@@ -26,21 +26,21 @@ body {
     @apply bg-primary text-secondary; 
 }
 
-.featured-products-swiper .swiper-button-prev, .featured-products-swiper .swiper-button-next {
+.featured-products-slider .swiper-button-prev, .featured-products-slider .swiper-button-next {
     @apply bg-transparent rounded-full border-2 border-secondary p-8 text-secondary;
 
 }
 
-.featured-products-swiper .swiper-button-prev::after,.featured-products-swiper .swiper-button-next::after {
+.featured-products-slider .swiper-button-prev::after,.featured-products-slider .swiper-button-next::after {
     @apply text-xl;
 }
 
-.featured-products-swiper .swiper-pagination-bullet {
+.featured-products-slider .swiper-pagination-bullet {
     @apply bg-transparent border-2 opacity-100 border-white w-6 h-6; 
 
 }
 
-.featured-products-swiper .swiper-pagination-bullet-active {
+.featured-products-slider .swiper-pagination-bullet-active {
     @apply bg-white;
 }
 
@@ -56,10 +56,13 @@ body {
     @apply !bg-[#6E6E6E];
 }
 
-.product-swiper .swiper-button-prev, .product-swiper .swiper-button-next {
+.product-slider .swiper-button-prev, .product-slider .swiper-button-next {
     @apply bg-white drop-shadow-lg rounded-full p-8 text-secondary;
 }
-.product-swiper .swiper-button-prev::after, .product-swiper .swiper-button-next::after {
+.product-slider .swiper-button-prev::after, .product-slider .swiper-button-next::after {
     @apply text-2xl font-bold;
 }
 
+.section-title {
+    @apply text-xl sm:text-[34px] md:text-5xl text-center font-bold mt-5 font-header;
+}

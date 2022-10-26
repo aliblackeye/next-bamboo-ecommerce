@@ -6,11 +6,11 @@ import { Dispatch, SetStateAction } from "react";
 import { GiWoodenChair, GiSofa, GiParkBench, GiCancel } from "react-icons/gi";
 import { BiCabinet, BiInfoCircle } from "react-icons/bi";
 import { FiPhone } from "react-icons/fi";
+import IconButton from "../../FormElements/Buttons/IconButton";
+import SearchInput from "../../FormElements/Inputs/SearchInput";
+import MenuLink from "../../Links/MenuLink";
 
 // Components
-import SearchInput from "../../../common/components/FormElements/Inputs/SearchInput";
-import LinkWithIcon from "../../../common/components/Links/MenuLink";
-import IconButton from "../../../common/components/FormElements/Buttons/IconButton";
 
 const MenuModal = ({
   setMenuModal,
@@ -26,24 +26,24 @@ const MenuModal = ({
         <SearchInput placeholder="Search..." />
 
         <nav className="flex flex-col gap-2 mt-10">
-          <LinkWithIcon href="/product">
+          <MenuLink href="/product">
             <GiWoodenChair size={24} /> Chairs
-          </LinkWithIcon>
-          <LinkWithIcon href="/product">
+          </MenuLink>
+          <MenuLink href="/product">
             <BiCabinet size={24} /> Cabinets
-          </LinkWithIcon>
-          <LinkWithIcon href="/product">
+          </MenuLink>
+          <MenuLink href="/product">
             <GiSofa size={24} /> Sofas
-          </LinkWithIcon>
-          <LinkWithIcon href="/product">
+          </MenuLink>
+          <MenuLink href="/product">
             <GiParkBench size={24} /> Benchs
-          </LinkWithIcon>
-          <LinkWithIcon href="/product">
+          </MenuLink>
+          <MenuLink href="/product">
             <BiInfoCircle size={24} /> About Us
-          </LinkWithIcon>
-          <LinkWithIcon href="/product">
+          </MenuLink>
+          <MenuLink href="/product">
             <FiPhone size={24} /> Contact
-          </LinkWithIcon>
+          </MenuLink>
         </nav>
 
         <IconButton

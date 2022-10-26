@@ -1,6 +1,6 @@
 import { FiSearch } from "react-icons/fi";
 import { HiShoppingCart } from "react-icons/hi";
-import IconButton from "../../../common/components/FormElements/Buttons/IconButton";
+import IconButton from "../../FormElements/Buttons/IconButton";
 
 const HeaderButtons = () => {
   return (

@@ -1,126 +1,32 @@
+/* eslint-disable @next/next/no-img-element */
+
+// Packages
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useState } from "react";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+// Icons
 import { HiShoppingCart } from "react-icons/hi";
+import { AiFillTwitterCircle, AiOutlineInstagram } from "react-icons/ai";
+import { MdOutlineFacebook } from "react-icons/md";
 
 // import required modules
-import { Navigation, Mousewheel, Scrollbar } from "swiper";
-import { MdOutlineFacebook } from "react-icons/md";
-import { AiFillTwitterCircle, AiOutlineInstagram } from "react-icons/ai";
+import Head from "../../common/components/Head/Head";
+import { useAppDispatch, useAppSelector } from "../../features/hooks";
+
+import Container from "../../common/components/Container/Container";
+import ImageSlider from "../../common/components/Slider/ImageSlider";
 
 const Product: NextPage = () => {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: "Product 1",
-      price: 100,
-      image: "/images/p1.png",
-      type: "chair",
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      price: 200,
-      image: "/images/p2.png",
-      type: "chair",
-    },
-    {
-      id: 3,
-      name: "Product 3",
-      price: 300,
-      image: "/images/p3.png",
-      type: "cabinet",
-    },
-    {
-      id: 4,
-      name: "Product 4",
-      price: 400,
-      image: "/images/p4.png",
-      type: "sofa",
-    },
-    {
-      id: 5,
-      name: "Product 5",
-      price: 500,
-      image: "/images/p5.png",
-      type: "sofa",
-    },
-    {
-      id: 6,
-      name: "Product 6",
-      price: 600,
-      image: "/images/p6.png",
-      type: "cabinet",
-    },
-    {
-      id: 7,
-      name: "Product 7",
-      price: 700,
-      image: "/images/p7.png",
-      type: "bench",
-    },
-    {
-      id: 8,
-      name: "Product 8",
-      price: 800,
-      image: "/images/p8.png",
-      type: "bench",
-    },
-    {
-      id: 9,
-      name: "Product 9",
-      price: 900,
-      image: "/images/p9.png",
-      type: "chair",
-    },
-    {
-      id: 10,
-      name: "Product 9",
-      price: 900,
-      image: "/images/p9.png",
-      type: "chair",
-    },
-
-    {
-      id: 11,
-      name: "Product 5",
-      price: 500,
-      image: "/images/p5.png",
-      type: "sofa",
-    },
-    {
-      id: 12,
-      name: "Product 3",
-      price: 300,
-      image: "/images/p3.png",
-      type: "cabinet",
-    },
-    {
-      id: 13,
-      name: "Product 3",
-      price: 300,
-      image: "/images/p3.png",
-      type: "cabinet",
-    },
-  ]);
-
-  const [heroImages, setHeroImages] = useState([
-    { id: 1, image: "/images/hero.jpg" },
-    { id: 2, image: "/images/hero2.jpg" },
-    { id: 3, image: "/images/hero3.jpg" },
-  ]);
-
+  const {
+    products: productData,
+    hero,
+    categories: categoriesData,
+  } = useAppSelector((state) => state.products);
+  const dispatch = useAppDispatch();
+  const [products, setProducts] = useState([...productData]);
+  const [heroImages, setHeroImages] = useState([...hero]);
   const [selectCategory, setSelectCategory] = useState("chair");
-
-  const [categories, setCategories] = useState([
-    "chair",
-    "cabinet",
-    "sofa",
-    "bench",
-  ]);
-
+  const [categories, setCategories] = useState([...categoriesData]);
   const [quantity, setQuantity] = useState(1);
 
   const quantityHandler = (id: string) => {
@@ -129,37 +35,15 @@ const Product: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Bamboo | Product Page</title>
-      </Head>
+      <Head title="" description="Ali Karagöz tarafından yapılmıştır." />
 
       <div className="container py-[12.5rem] mx-auto px-5">
         <div className="flex flex-col lg:flex-row gap-5 justify-center">
-          <Swiper
-            cssMode={true}
-            navigation={true}
-            mousewheel={true}
-            modules={[Navigation, Mousewheel]}
-            className="product-swiper w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]">
-            <SwiperSlide>
-              <div className="w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]">
-                <img
-                  src="/images/p1.png"
-                  className="w-full h-full"
-                  alt="product"
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]">
-                <img
-                  src="/images/p3.png"
-                  className="w-full h-full"
-                  alt="product"
-                />
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <ImageSlider
+            images={products}
+            imageClass="w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]"
+          />
+          {/* className="product-swiper w-[21.875rem] h-[28.6563rem] sm:h-[50rem] sm:w-[38.125rem]" */}
 
           <div className="flex flex-col items-center flex-[0.8]">
             <div>
@@ -274,42 +158,20 @@ const Product: NextPage = () => {
         </div>
       </div>
 
-      <div className="container mx-auto p-5">
+      <Container className="p-5">
         <div>
           <h1 className="mb-[3.375rem] text-[3rem] font-header text-center">
             Related Product
           </h1>
           <div className="mt-5">
-            <Swiper
-              slidesPerView={3}
-              centeredSlides={false}
-              slidesPerGroupSkip={1}
-              grabCursor={true}
-              breakpoints={{
-                769: {
-                  slidesPerView: 3,
-                  slidesPerGroup: 1,
-                },
-              }}
-              scrollbar={true}
-              spaceBetween={40}
-              modules={[Scrollbar]}
-              className="bamboo-products-swiper py-10">
-              {products
-                .filter((product) => product.type === selectCategory)
-                .map((p) => (
-                  <SwiperSlide key={p.id}>
-                    <img
-                      src={p.image}
-                      alt="product"
-                      className="object-cover !w-full !h-full"
-                    />
-                  </SwiperSlide>
-                ))}
-            </Swiper>
+            <ImageSlider
+              images={products.filter(
+                (product) => product.category === selectCategory
+              )}
+            />
           </div>
         </div>
-      </div>
+      </Container>
     </>
   );
 };

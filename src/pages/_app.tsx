@@ -1,15 +1,15 @@
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import "swiper/css/scrollbar";
-
+// Styles
+import "swiper/css/bundle";
 import "../styles/globals.css";
 
+// Types
 import type { AppProps } from "next/app";
+
+// Redux
 import { store } from "../features/store";
 import { Provider } from "react-redux";
+
+// Layout
 import Layout from "../layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
