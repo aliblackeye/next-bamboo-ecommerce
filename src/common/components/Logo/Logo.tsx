@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { LogoProps } from "../../props/props";
-import Image from "../Image/Image";
+import Image, { ImageProps } from "../Image/Image";
+
+interface LogoProps extends ImageProps {
+  href?: string;
+}
 
 /**
  * Logo oluşturmak için kullanabilirsiniz.

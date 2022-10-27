@@ -1,4 +1,14 @@
-import { ImageProps } from "../../props/props";
+import { ObjectFitTypes } from "../../types/types";
+
+export interface ImageProps {
+  src: string;
+  width?: string;
+  height?: string;
+  objectFit?: ObjectFitTypes;
+  alt?: string;
+  className?: string;
+  imageClass?: string;
+}
 
 /**
  * Image oluşturmak için bu componenti kullanın. Pixel değerlerini otomatik olarak rem'e dönüştürür.

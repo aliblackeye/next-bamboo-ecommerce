@@ -1,4 +1,4 @@
-import { ColorTypes } from "../../../props/props";
+import { ColorTypes } from "../../../types/types";
 import Input from "./Input";
 
 interface SearchInputProps {

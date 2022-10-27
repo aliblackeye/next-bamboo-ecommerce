@@ -1,5 +1,16 @@
 import Link from "next/link";
-import { ButtonProps } from "../../../props/props";
+import { ColorTypes } from "../../../types/types";
+
+interface ButtonProps {
+  children?: React.ReactNode;
+  color?: ColorTypes;
+  className?: string;
+  href?: string;
+  target?: string;
+  disabled?: boolean;
+  id?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
 
 /**
  *
@@ -75,7 +86,9 @@ const Button = ({
     <>
       {href ? (
         <Link href={href} target={target}>
-          <ButtonElement />
+          <div>
+            <ButtonElement />
+          </div>
         </Link>
       ) : (
         <ButtonElement />

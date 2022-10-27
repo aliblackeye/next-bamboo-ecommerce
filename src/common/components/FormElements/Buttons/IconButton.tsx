@@ -1,5 +1,14 @@
+import { ObjectFitTypes } from "../../../types/types";
 import Image from "../../Image/Image";
-import { IconButtonProps } from "../../../props/props";
+
+interface IconButtonProps {
+  children: React.ReactNode;
+  img?: { src: string; width: string; height: string };
+  imgFit?: ObjectFitTypes;
+  imgStyle?: string;
+  className?: string;
+  onClick?: () => void;
+}
 
 /**
  * @example

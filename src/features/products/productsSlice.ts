@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { ProductTypes } from "../../common/props/props";
+import { ProductTypes } from "../../common/types/types";
 
 type Hero = {
   id: number;

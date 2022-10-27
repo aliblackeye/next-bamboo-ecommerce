@@ -6,6 +6,15 @@ type HeadProps = {
   links?: Array<{ rel: string; href: string }>;
 };
 
+/**
+ * Head component
+ *
+ * @example
+ * <Head title="Ana Sayfa" description="Site açıklaması." />
+ * @param {string} title - Sayfa başlığı
+ * @param {string} description - Sayfa açıklaması
+ */
+
 const Head = ({ title, description }: HeadProps) => {
   return (
     <HeadElement>

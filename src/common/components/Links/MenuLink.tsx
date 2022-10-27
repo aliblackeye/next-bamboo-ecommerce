@@ -2,7 +2,14 @@
 import Link from "next/link";
 
 // Props
-import { MenuLinkProps } from "../../props/props";
+interface MenuLinkProps {
+  children?: React.ReactNode;
+  className?: string;
+  href: string;
+  justify?: "between" | "start" | "end";
+}
+
+
 
 /**
  * Hamburger menüler için kullanabilirsiniz.

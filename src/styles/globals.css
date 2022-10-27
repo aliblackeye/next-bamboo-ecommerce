@@ -13,7 +13,7 @@ body {
 }
 
 .btn {
-    @apply py-[16px] px-[46px] inline-block bg-[#292929] rounded-[30px] font-bold uppercase text-white transition-all hover:opacity-90;
+    @apply py-[16px] px-[46px] inline-block rounded-[30px] font-bold uppercase text-[#333] transition-all hover:opacity-90;
     /* display: inline-block;
     padding: 0.5rem 1rem;
     color: #fff;
@@ -27,7 +27,7 @@ body {
 }
 
 .featured-products-slider .swiper-button-prev, .featured-products-slider .swiper-button-next {
-    @apply bg-transparent rounded-full border-2 border-secondary p-8 text-secondary;
+    @apply bg-white drop-shadow-lg rounded-full p-8 text-secondary;
 
 }
 
@@ -65,4 +65,12 @@ body {
 
 .section-title {
     @apply text-xl sm:text-[34px] md:text-5xl text-center font-bold mt-5 font-header;
+}
+
+.paragraph {
+    @apply mt-4 hidden text-[18px] md:inline-block md:text-[24px];
+}
+
+.product-title {
+    @apply text-[2.625rem] font-header font-bold;
 }

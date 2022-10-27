@@ -1,4 +1,7 @@
-import { TitleProps } from "../../props/props";
+interface TitleProps {
+  children: string;
+  className?: string;
+}
 
 const Title = ({ children, className }: TitleProps) => {
   return <h1 className={`${className}`}>{children}</h1>;

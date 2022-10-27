@@ -5,7 +5,34 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import * as S from "swiper";
 
 //Types
-import { SliderProps } from "../../props/props";
+
+interface SliderProps {
+  images: { id: number; image: string }[];
+  parallax?: "none" | "light" | "dark";
+  imageWidth?: string;
+  imageHeight?: string;
+  sliderClass?: string;
+  imageClass?: string;
+  navigation?: boolean;
+  pagination?: boolean;
+  mousewheel?: boolean;
+  autoplay?: {
+    delay: number;
+    pauseOnMouseEnter: boolean;
+    disableOnInteraction: boolean;
+  };
+  keyboard?: boolean;
+  slidesPerView?: number;
+  spaceBetween?: number;
+  slidesPerGroupSkip?: number;
+  centeredSlides?: boolean;
+  breakpoints?: {
+    [key: string]: { slidesPerView: number; slidesPerGroup: number };
+  };
+  scrollbar?: boolean;
+  grabCursor?: boolean;
+}
+
 import Image from "../Image/Image";
 
 /**
@@ -24,7 +51,7 @@ import Image from "../Image/Image";
 
 const ImageSlider = ({
   images,
-  parallax = "light",
+  parallax = "none",
   imageWidth = "100%",
   imageHeight = "100%",
   sliderClass,
@@ -37,6 +64,10 @@ const ImageSlider = ({
   slidesPerGroupSkip,
   grabCursor,
   pagination = false,
+  keyboard,
+  navigation = true,
+  mousewheel,
+  autoplay,
 }: SliderProps) => {
   let parallaxEffect: string;
   switch (parallax) {
@@ -52,23 +83,6 @@ const ImageSlider = ({
 
   return (
     <Swiper
-      cssMode={true}
-      navigation={true}
-      mousewheel={true}
-      pagination={pagination ? { clickable: true } : false}
-      autoplay={{
-        delay: 3000,
-        pauseOnMouseEnter: true,
-        disableOnInteraction: false,
-      }}
-      keyboard={true}
-      slidesPerView={slidesPerView}
-      spaceBetween={spaceBetween}
-      centeredSlides={centeredSlides}
-      breakpoints={breakpoints}
-      scrollbar={scrollbar}
-      slidesPerGroupSkip={slidesPerGroupSkip}
-      grabCursor={grabCursor}
       modules={[
         S.Navigation,
         S.Pagination,
@@ -90,7 +104,24 @@ const ImageSlider = ({
         S.Keyboard,
         S.Mousewheel,
         S.A11y,
+        S.Controller,
+        S.Zoom,
+        S.EffectCreative,
+        S.EffectCards,
       ]}
+      cssMode={true}
+      navigation={navigation}
+      mousewheel={mousewheel}
+      pagination={pagination && { clickable: true }}
+      autoplay={autoplay}
+      keyboard={keyboard}
+      slidesPerView={slidesPerView}
+      spaceBetween={spaceBetween}
+      centeredSlides={centeredSlides}
+      breakpoints={breakpoints}
+      scrollbar={scrollbar}
+      slidesPerGroupSkip={slidesPerGroupSkip}
+      grabCursor={grabCursor}
       className={sliderClass}>
       {images.map((i) => (
         <SwiperSlide key={i.id}>
